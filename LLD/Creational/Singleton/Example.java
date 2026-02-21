@@ -10,7 +10,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class Example {
-    public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, FileNotFoundException, IOException, ClassNotFoundException {
+    public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, FileNotFoundException, IOException, ClassNotFoundException, CloneNotSupportedException {
         
         // Ways to Break Singleton Design Pattern
 
@@ -31,16 +31,24 @@ public class Example {
         
         // 2. Deserialization 
 
-        Singleton s3 = Singleton.getInstance();
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
-        oos.writeObject(s3);
-        System.out.println("s3 " + s3.hashCode());
+        // Singleton s3 = Singleton.getInstance();
+        // ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
+        // oos.writeObject(s3);
+        // System.out.println("s3 " + s3.hashCode());
         
-        System.out.println("Serialization Done");
+        // System.out.println("Serialization Done");
 
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
-        Singleton s4 = (Singleton) ois.readObject();
+        // ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
+        // Singleton s4 = (Singleton) ois.readObject();
         
-        System.out.println("s4 " + s4.hashCode());
+        // System.out.println("s4 " + s4.hashCode());
+
+
+        // 3. Cloning 
+        Singleton s5 = Singleton.getInstance();
+        Singleton s6 = ( Singleton ) s5.clone();
+
+        System.out.println("s5 " + s5.hashCode());
+        System.out.println("s6 " + s6.hashCode());
     }   
 }
