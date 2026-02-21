@@ -14,6 +14,9 @@ public class Main {
 
         try{
             networkConnection2 = (NetworkConnection) networkConnection.clone();
+            networkConnection2.getDomains().remove(1);
+
+            System.out.println(networkConnection);
             System.out.println(networkConnection2);
         }catch(CloneNotSupportedException e){
             e.printStackTrace();
