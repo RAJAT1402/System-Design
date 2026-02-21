@@ -101,7 +101,7 @@ public class Singleton implements Cloneable{
     //     return super.clone();
     // }
 
-     @Override
+    @Override
     public Object clone() throws CloneNotSupportedException{
         return Instance;
     }
