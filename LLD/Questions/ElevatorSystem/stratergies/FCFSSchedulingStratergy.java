@@ -11,7 +11,7 @@ public class FCFSSchedulingStratergy implements SchedulingStratergy{
     @Override
     public int nextStop(Elevator elevator) {
 
-        System.out.println("Scheduling Stratergy");
+        System.out.println("First come first server Scheduling Stratergy");
 
         Direction elevatorDirection = elevator.getDirection();
         int currentFloor = elevator.getCurrentFloor();
